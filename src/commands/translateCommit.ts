@@ -24,7 +24,6 @@ export async function translateCommitCommand() {
   if (!isStringValid(apiKey)) {
     return;
   }
-  vscode.window.showInformationMessage(apiKey);
 
   /** 3. get repository from git */
   const repository = getSingleRepository(gitExtension);

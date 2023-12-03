@@ -14,7 +14,6 @@ export default async function getTranslatedCommitMessage({
   try {
     const targetLanguage =
       getConfiguration().get<string | undefined>("deepl.targetLanguage") ?? "EN";
-    vscode.window.showErrorMessage(targetLanguage);
 
     const response = await postDeeplApi({
       text: commit.trim(),
