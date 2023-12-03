@@ -1,5 +1,9 @@
 # Commit Message Translator
 
+[![VS Code extension marketplace version](https://img.shields.io/visual-studio-marketplace/v/nimod7890.commit-translator)](https://marketplace.visualstudio.com/items?itemName=nimod7890.commit-translator)
+[![VS Code extension installs](https://img.shields.io/visual-studio-marketplace/i/nimod7890.commit-translator)](https://marketplace.visualstudio.com/items?itemName=nimod7890.commit-translator)
+[![VS Code extension rating](https://img.shields.io/visual-studio-marketplace/r/nimod7890.commit-translator)](https://marketplace.visualstudio.com/items?itemName=nimod7890.commit-translator)
+
 Welcome to Commit Message Translator for Visual Studio Code! This extension leverages the power of the DeepL Translate API to seamlessly translate your commit messages from Korean to English. Ideal for international teams and open-source projects where English is the primary language of communication.
 
 ## Preview
