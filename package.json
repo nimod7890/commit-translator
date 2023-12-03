@@ -1,0 +1,98 @@
+{
+  "name": "commit-translator",
+  "displayName": "Commit Message Translator",
+  "description": "VSCode extension which translates commit message ",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimod7890/commit-translator"
+  },
+  "license": "MIT",
+  "publisher": "nimod7890",
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "git",
+    "translate",
+    "deepl",
+    "ai",
+    "generate",
+    "commit",
+    "message",
+    "conventional-commit",
+    "vs-code",
+    "vscode",
+    "productivity"
+  ],
+  "icon": "assets/images/logo.png",
+  "engines": {
+    "vscode": "^1.83.1"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commit-translator.translateCommit",
+        "title": "Translate commit",
+        "icon": {
+          "dark": "assets/icons/translate-you-svgrepo-com-dark.svg",
+          "light": "assets/icons/translate-you-svgrepo-com-light.svg"
+        }
+      },
+      {
+        "command": "commit-translator.setApiKey",
+        "title": "Set api key"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "commit-translator.translateCommit",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Commit translator",
+      "properties": {
+        "commit-translator.deepl.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Needed for translating commit message."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.1",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "lodash": "^4.17.21",
+    "zod": "^3.22.4"
+  }
+}
