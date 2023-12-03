@@ -4,3 +4,8 @@
 
 - Korean to English Translation
 - DeepL API Integration
+
+## v.1.1.0
+
+- Multilingual Translation
+- 403 error handling when api key is empty
