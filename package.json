@@ -62,7 +62,12 @@
         "commit-translator.deepl.apiKey": {
           "type": "string",
           "default": "",
-          "description": "Needed for translating commit message."
+          "description": "deepl auth key for translating commit message."
+        },
+        "commit-translator.deepl.targetLanguage": {
+          "type": "string",
+          "default": "EN",
+          "description": "Enter the language code for your target translation language. \nex) 'KO' for Korean.\nmore: https://www.deepl.com/docs-api/translate-text"
         }
       }
     }
