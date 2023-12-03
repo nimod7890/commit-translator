@@ -1,9 +1,7 @@
-import * as vscode from "vscode";
+import { ApiKey } from "../constants/api";
+import { getConfiguration } from "./configuration/getConfiguration";
 
-export function getDeepLApiKey() {
-  const apiKey = vscode.workspace
-    .getConfiguration("commit-translator.deepl")
-    .get<string>("apiKey");
-
+export default function getDeepLApiKey(): string | undefined {
+  const apiKey = getConfiguration().get<string | undefined>(ApiKey);
   return apiKey;
 }

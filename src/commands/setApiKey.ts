@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
-import { setConfigurationValue } from "../utils/setConfiguration";
-import validateString from "../utils/validateString";
+import isStringValid from "../utils/isStringValid";
+import { setConfigurationValue } from "../utils/configuration/setConfiguration";
 import { ApiKey } from "../constants/api";
 
 export async function setApiKeyCommand() {
@@ -8,7 +8,7 @@ export async function setApiKeyCommand() {
     title: "Please enter your API Key",
   });
 
-  if (!validateString(apiKey)) {
+  if (!isStringValid(apiKey)) {
     vscode.window.showErrorMessage("api key should be string type");
     return;
   }

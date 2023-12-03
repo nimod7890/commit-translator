@@ -1,16 +1,25 @@
-import { postDeeplApi } from "../api/postDeeplApi";
 import * as vscode from "vscode";
+import { postDeeplApi } from "../api/postDeeplApi";
+import { getConfiguration } from "./configuration/getConfiguration";
+
 type getTranslatedCommitMessageProps = {
   commit: string;
-  apikey: string;
+  apiKey: string;
 };
 
-export async function getTranslatedCommitMessage({
+export default async function getTranslatedCommitMessage({
   commit,
-  apikey,
+  apiKey,
 }: getTranslatedCommitMessageProps): Promise<string> {
   try {
-    const response = await postDeeplApi({ text: commit, apiKey: apikey });
+    const targetLanguage =
+      getConfiguration().get<string | undefined>("deepl.targetLanguage") ?? "EN";
+
+    const response = await postDeeplApi({
+      text: commit.trim(),
+      apiKey: apiKey,
+      targetLanguage: targetLanguage.trim(),
+    });
     return response.translations[0].text;
   } catch (error) {
     if (error instanceof Error) {
