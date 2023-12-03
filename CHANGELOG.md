@@ -9,3 +9,7 @@
 
 - Multilingual Translation
 - 403 error handling when api key is empty
+
+#### v.1.1.1
+
+- update changelog.md
