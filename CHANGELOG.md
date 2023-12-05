@@ -13,3 +13,7 @@
 #### v.1.1.1
 
 - update changelog.md
+
+#### v.1.1.2
+
+- DeepL API error handling
